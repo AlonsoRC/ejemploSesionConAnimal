@@ -5,6 +5,7 @@
 
 package servlets;
 
+import static java.io.FileDescriptor.out;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -26,12 +27,13 @@ public class ValidaSesionesServlet extends HttpServlet {
       //Pedimos el atributo, y verificamos si existe
       String claveSesion = (String) sesion.getAttribute("claveSesion");
 
-      if(claveSesion.equals("emmanueloropeza")){
-        titulo = "llave correcta continua la sesion";
+      if(claveSesion.equals("alonsorocha")){
+        response.sendRedirect("/EjemploSession/HOME.jsp");
       }
       else
       {
-        titulo = "llave incorrecta inicie nuevamente sesion";
+        response.sendRedirect("/EjemploSession/ERROR.jsp");
+
       }
 
 
